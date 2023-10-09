@@ -9,9 +9,9 @@
 #'
 
 fences <- function(x){
-  Q1 <- quantile(x, 0.25)
-  Q3 <- quantile(x, 0.75)
-  IQR_value <- IQR(x)
+  Q1 <- stats::quantile(x, 0.25)
+  Q3 <- stats::quantile(x, 0.75)
+  IQR_value <- stats::IQR(x)
   k <- 1.5
   lower_fence <- Q1 - k * IQR_value
   upper_fence <- Q3 + k * IQR_value
