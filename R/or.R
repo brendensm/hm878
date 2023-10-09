@@ -8,10 +8,17 @@
 #' or(model_block1)
 
 or <- function(x){
-   odds_ratios <- exp(stats::coef(x))
-   conf_intervals <- exp(stats::confint(x))
-   results <- data.frame(Odds_Ratio = odds_ratios, CI_Lower = conf_intervals[, 1],
-                          CI_Upper = conf_intervals[, 2])
-   return(results)
+  odds_ratios <- exp(stats::coef(x))
+  conf_intervals <- exp(stats::confint(x))
 
+  if(is.matrix(conf_intervals)){
+
+    results <- data.frame(Odds_Ratio = odds_ratios, CI_Lower = conf_intervals[,1],
+                          CI_Upper = conf_intervals[,2])
+    return(results)
+  } else {
+    results <- data.frame(Odds_Ratio = odds_ratios, CI_Lower = conf_intervals[1],
+                          CI_Upper = conf_intervals[2])
+    return(results)
+  }
 }
