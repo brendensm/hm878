@@ -15,7 +15,7 @@ predict_percent <- function(model, dependent, name = "your model"){
   # name is an optional title to give your model in the output
   prob = stats::predict(model, type = "response")
   lab = ifelse(prob >= 0.5, 1, 0)
-  acc = mean(lab == dependent)
+  acc = mean(lab == {{dependent}})
 
 
   acc_label = paste0("Accuracy for ", name, ": ", round(acc * 100, 2), "%")
