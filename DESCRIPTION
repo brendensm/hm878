@@ -12,3 +12,5 @@ LazyData: true
 Imports: 
     stats
 RoxygenNote: 7.1.2
+URL: https://github.com/brendensm/hm878
+BugReports: https://github.com/brendensm/hm878/issues
