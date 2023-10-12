@@ -18,8 +18,7 @@ predict_percent <- function(model, dependent, name = "your model"){
   acc = mean(lab == {{dependent}})
 
 
-  acc_label = paste0("Accuracy for ", name, ": ", round(acc * 100, 2), "%")
+  cat(paste0("Accuracy for ", name, ": ", round(acc * 100, 2), "%"))
 
-  return(acc_label)
 
 }

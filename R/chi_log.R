@@ -25,7 +25,10 @@ chi_log <- function(model, data, name = "model"){
   p_value_block1 <- 1 - stats::pchisq(pearson_chi_square_block1, df_block1)
 
 
-  cat("Pearson chi-squared for ", paste0(name, ": "), round(pearson_chi_square_block1, 2), "\n",
+  cat("Pearson Goodness of Fit Test\n\n",
+      "Null Hypothesis: The model fits\n",
+      "Alternative Hypothesis: the model does not fit\n\n",
+    "Pearson chi-squared for ", paste0(name, ": "), round(pearson_chi_square_block1, 2), "\n",
 
       "Degrees of freedom for ", paste0(name, ": "), df_block1, "\n",
 

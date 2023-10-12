@@ -12,3 +12,4 @@ This package was developed to introduce helper functions for common tasks in the
 - `chi_log` &mdash; a function to calculate the Pearson's goodness of fit to a logistic regression model
 - `predict_percent` &mdash; a function to calculate an accuracy percentage for a logistic regression model based off of predicted probabilities
 - `fences` &mdash; a function to calculate the upper and lower fences of a continuous variable
+- `compare_models` &mdash; a function to compare output from multiple models
