@@ -16,3 +16,5 @@ This package was developed to introduce helper functions for common tasks in the
 
 # Examples
 To view a complete walkthrough of each function, view the package vignette found [here]("https://brendenmsmith.com/posts/hm878:%20helper%20functions/")
+
+[testing link](google.com)
