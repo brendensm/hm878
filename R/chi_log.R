@@ -15,24 +15,24 @@ chi_log <- function(model, data, name = "model"){
   # model is the name of your model
   # data is your dataframe
   # name is an optional label for your output
-  residuals_block1 <- stats::residuals(model, type = "pearson")
+  residuals <- stats::residuals(model, type = "pearson")
+  pearson_chi_square <- sum(residuals^2)
+  df_ <- nrow(data) - length(coefficients(model))
+  p_value <- 1 - stats::pchisq(pearson_chi_square, df_)
 
-  pearson_chi_square_block1 <- sum(residuals_block1^2)
-
-  df_block1 <- nrow(data) - length(coefficients(model))
-
-
-  p_value_block1 <- 1 - stats::pchisq(pearson_chi_square_block1, df_block1)
-
-
-  cat("Pearson Goodness of Fit Test\n\n",
-      "Null Hypothesis: The model fits\n",
-      "Alternative Hypothesis: the model does not fit\n\n",
-    "Pearson chi-squared for ", paste0(name, ": "), round(pearson_chi_square_block1, 2), "\n",
-
-      "Degrees of freedom for ", paste0(name, ": "), df_block1, "\n",
-
-      "P-value for ", paste0(name, ": "), p_value_block1, "\n")
+  cat(
+      "Pearson Goodness of Fit Test\n",
+      "Null Hypothesis: The model fits.\n",
+      "Alternative Hypothesis: The model does not fit.\n\n",
+      "Pearson chi-squared for", paste0(name, ": "),
+      round(pearson_chi_square, 2), "\n",
+      "Degrees of freedom for", paste0(name, ": "), df_, "\n",
+      "P-value for", paste0(name, ": "), p_value, "\n\n",
+      "---\n",
+      ifelse(round(p_value, 2) < 0.05,
+      "Null Hypothesis is rejected. The model does not fit.\n",
+      "Failed to reject Null Hypothesis. The model fits.\n"),
+      "---"
+      )
 
 }
-
