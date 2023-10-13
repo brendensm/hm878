@@ -17,13 +17,16 @@ compare_models <- function(..., labels = NULL){
 
     names(models) <- unlist(lapply(
       match.call(expand.dots = FALSE)$`...`,
-      function(.x) deparse(.x, width.cutoff = 500L))
-    )
+      function(.x) deparse(.x, width.cutoff = 500L)))
+
+
     return(models)
   }else{
     models <- list(...)
 
     names(models) <- labels
+
+
     return(models)
   }
 
