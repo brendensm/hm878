@@ -13,6 +13,7 @@ This package was developed to introduce helper functions for common tasks in the
 - `predict_percent` &mdash; a function to calculate an accuracy percentage for a logistic regression model based off of predicted probabilities
 - `fences` &mdash; a function to calculate the upper and lower fences of a continuous variable
 - `compare_models` &mdash; a function to compare output from multiple models
+- `deviance_aic` &mdash; a function that compares only null deviance, residual deviance, and AIC between multiple models
 
 # Examples
 To view a complete walkthrough of each function, view the package vignette found [here](https://brendenmsmith.com/posts/hm878:%20helper%20functions/)
