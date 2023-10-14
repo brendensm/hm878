@@ -61,6 +61,8 @@ If you want to revise and adjust your model, it can be helpful to limit outliers
 
 ```{r}
 fences(mtcars$cyl)
+fences(mtcars$cyl)$Lower
+fences(mtcars$cyl)$Upper
 ```
 
 

@@ -15,4 +15,4 @@ This package was developed to introduce helper functions for common tasks in the
 - `compare_models` &mdash; a function to compare output from multiple models
 
 # Examples
-To view a complete walkthrough of each function, view the package vignette found [here]("https://brendenmsmith.com/posts/hm878:%20helper%20functions/")
+To view a complete walkthrough of each function, view the package vignette found [here](https://brendenmsmith.com/posts/hm878:%20helper%20functions/)
