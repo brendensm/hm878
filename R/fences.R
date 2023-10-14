@@ -11,6 +11,7 @@
 #'
 
 fences <- function(x){
+
     Q1 <- stats::quantile(x, 0.25)
     Q3 <- stats::quantile(x, 0.75)
     IQR_value <- stats::IQR(x)
@@ -18,7 +19,11 @@ fences <- function(x){
     lower_fence <- Q1 - k * IQR_value
     upper_fence <- Q3 + k * IQR_value
 
+    name <- as.character(substitute(x))
+
     return(
-        data.frame(Lower = lower_fence, Upper = upper_fence)
+        data.frame(lower_fence, upper_fence,
+                   row.names = name[3])
     )
+
 }
